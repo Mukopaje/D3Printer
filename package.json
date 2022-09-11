@@ -1,0 +1,17 @@
+{
+  "name": "cordova.plugin.d3printer",
+  "version": "1.0.0",
+  "description": "This plugin will connect to the printer on a D3 wizarpos all in one computer",
+  "cordova": {
+    "id": "cordova.plugin.d3printer",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Mukopaje Singogo",
+  "license": "ISC"
+}

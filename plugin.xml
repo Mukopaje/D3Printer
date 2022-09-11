@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova.plugin.d3printer" version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>d3Printer</name>
+    <js-module name="d3Printer" src="www/d3Printer.js">
+        <clobbers target="d3Printer" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="d3Printer">
+                <param name="android-package" value="cordova.plugin.d3printer.d3Printer" />
+                <param name="onload" value="false" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.CLOUDPOS_CASHBOX_ADAPTER" />
+            <uses-permission android:name="android.permission.CLOUDPOS_PRINTER_ADAPTER" />
+            <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+        </config-file>
+        <source-file src="src/android/d3Printer.java" target-dir="src/cordova/plugin/d3printer/d3Printer" />
+        <source-file src="src/android/PrinterData.java" target-dir="src/cordova/plugin/d3printer/PrinterData" />
+        <source-file src="src/android/Utils.java" target-dir="src/cordova/plugin/d3printer/Utils" />
+
+        <lib-file src="src/android/libs/cloudpos.aar" />
+        <framework src="src/android/cloudpos.gradle" custom="true" type="gradleReference" />
+
+        <!-- <lib-file src="src/android/libs/core-3.3.0.jar" /> -->
+    </platform>
+</plugin>
