@@ -117,7 +117,7 @@ public class d3Printer extends CordovaPlugin {
           try {
             device.open();
             System.out.println("Plugin Init  = 2" + device.toString());
-            handler.obtainMessage(1, "printer already opened").sendToTarget();
+            // handler.obtainMessage(1, "printer already opened").sendToTarget();
           } catch (Exception e) {
             handler
               .obtainMessage(1, "printer open exception  ...")
@@ -137,7 +137,7 @@ public class d3Printer extends CordovaPlugin {
 
       if (ExtraOrderData != "" || ExtraOrderData != null) {
         extraPrintContent1 = strToByteArray(ExtraOrderData, "UTF-8");
-    }
+      }
     } catch (UnsupportedEncodingException e2) {
       // TODO Auto-generated catch block
       e2.printStackTrace();
@@ -146,7 +146,7 @@ public class d3Printer extends CordovaPlugin {
     try {
       if (device == null) {
         Toast
-          .makeText(tContext, "please open printer", Toast.LENGTH_SHORT)
+          .makeText(tContext, "Printer not initialized!", Toast.LENGTH_SHORT)
           .show();
         return;
       }
